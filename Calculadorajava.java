@@ -114,7 +114,7 @@ public class Calculadorajava{
 				System.out.println("Calculadora básica...");
 				
 				// recebimento de inputs:
-				System.out.println("Digite a operação à ser feita (+ , - , * , / , ** , %.)");
+				System.out.println("Digite a operação à ser feita (+ , - , * , / , ** ou %)");
 				String UserOperation = br.readLine();
 					
 					
