@@ -112,118 +112,116 @@ public class Calculadorajava{
 			else if(UserInput.equals("1")) {
 				// início da calculadora básica:
 				System.out.println("Calculadora básica...");
-				while(true) {
-					// início do loop da calculadora básica e recebimento de inputs:
-					System.out.println("Digite a operação à ser feita (+ , - , * , / , ** , % ou 0 para voltar)");
-					String UserOperation = br.readLine();
+				
+				// recebimento de inputs:
+				System.out.println("Digite a operação à ser feita (+ , - , * , / , ** , %.)");
+				String UserOperation = br.readLine();
 					
-					if(UserOperation.equals("0")) {break;}
 					
-					System.out.println("Digite o primeiro número da operação:");
-					String Usernum1s = br.readLine();
+				System.out.println("Digite o primeiro número da operação:");
+				String Usernum1s = br.readLine();
 
-					double Usernum1 = Double.parseDouble(Usernum1s);
-					calculadora1.setnum1(Usernum1);
-					double num1 = calculadora1.getnum1();
+				double Usernum1 = Double.parseDouble(Usernum1s);
+				calculadora1.setnum1(Usernum1);
+				double num1 = calculadora1.getnum1();
 					
-					System.out.println("Digite o segundo número da operação:");
-					String Usernum2s = br.readLine();
+				System.out.println("Digite o segundo número da operação:");
+				String Usernum2s = br.readLine();
 					
-					double Usernum2 = Double.parseDouble(Usernum2s);
-					calculadora1.setnum2(Usernum2);
-					double num2 = calculadora1.getnum2();
+				double Usernum2 = Double.parseDouble(Usernum2s);
+				calculadora1.setnum2(Usernum2);
+				double num2 = calculadora1.getnum2();
 					
-					// chamada dos métodos para os diferentes cálculos e outputs finais;
-					if(UserOperation.equals("+")) {
-						calculadora1.soma(num1,num2);
-						double resultado = calculadora1.getResultado();
-						System.out.printf("A soma entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
-					}
+				// chamada dos métodos para os diferentes cálculos e outputs finais;
+				if(UserOperation.equals("+")) {
+					calculadora1.soma(num1,num2);
+					double resultado = calculadora1.getResultado();
+					System.out.printf("A soma entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
+				}
 					
-					else if(UserOperation.equals("-")) {
-						calculadora1.subtracao(num1,num2);
-						double resultado = calculadora1.getResultado();
+				else if(UserOperation.equals("-")) {
+					calculadora1.subtracao(num1,num2);
+					double resultado = calculadora1.getResultado();
 						System.out.printf("A subtração entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
-					}
+				}
 					
-					else if(UserOperation.equals("*")) {
-						calculadora1.multiplicacao(num1,num2);
-						double resultado = calculadora1.getResultado();
-						System.out.printf("A multiplicação entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
-					}
+				else if(UserOperation.equals("*")) {
+					calculadora1.multiplicacao(num1,num2);
+					double resultado = calculadora1.getResultado();
+					System.out.printf("A multiplicação entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
+				}
 					
-					else if(UserOperation.equals("/")) {
-						calculadora1.divisao(num1,num2);
-						double resultado = calculadora1.getResultado();
-						System.out.printf("A divisão entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
-					}
+				else if(UserOperation.equals("/")) {
+					calculadora1.divisao(num1,num2);
+					double resultado = calculadora1.getResultado();
+					System.out.printf("A divisão entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
+				}
 					
-					else if(UserOperation.equals("**")) {
-						calculadora1.exponenciacao(num1,num2);
-						double resultado = calculadora1.getResultado();
-						System.out.printf("A exponenciação de %.2f elevado a %.2f é: %.2f%n",num1,num2,resultado);
-					}
+				else if(UserOperation.equals("**")) {
+					calculadora1.exponenciacao(num1,num2);
+					double resultado = calculadora1.getResultado();
+					System.out.printf("A exponenciação de %.2f elevado a %.2f é: %.2f%n",num1,num2,resultado);
+				}
+				
+				else if(UserOperation.equals("%")) {
+					calculadora1.resto(num1,num2);
+					double resultado = calculadora1.getResultado();
+					System.out.printf("O resto da divisão entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
+				}
 					
-					else if(UserOperation.equals("%")) {
-						calculadora1.resto(num1,num2);
-						double resultado = calculadora1.getResultado();
-						System.out.printf("O resto da divisão entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
-					}
-					
-					else {System.out.printf("%s é um comando inválido.%n",UserOperation);}
-				}// fim do loop da calculadora básica
-			}
+				else {System.out.printf("%s é um comando inválido.%n",UserOperation);}
+				}// fim da calculadora básica
+			
 			else if(UserInput.equals("2")) {
 				// início da calculadora de polinômios:
 				System.out.println("Calculadora de polinômio...");
-				while(true) {
-					// início do loop da calculadora de polinômios e recebimento de inputs:
-					System.out.println("Digite o valor de a ou s para voltar");
-					String UsernumaS = br.readLine();
-					if(UsernumaS.equals("s")) {break;}
-					double UserNumA = Double.parseDouble(UsernumaS);
-					calculadora2.setA(UserNumA);
+				
+				// recebimento de inputs:
+				System.out.println("Digite o valor de a");
+				String UsernumaS = br.readLine();
+				double UserNumA = Double.parseDouble(UsernumaS);
+				calculadora2.setA(UserNumA);
 					
-					System.out.println("Digite o valor de b");
-					String UsernumbS = br.readLine();
-					double UserNumB = Double.parseDouble(UsernumbS);
-					calculadora2.setB(UserNumB);
+				System.out.println("Digite o valor de b");
+				String UsernumbS = br.readLine();
+				double UserNumB = Double.parseDouble(UsernumbS);
+				calculadora2.setB(UserNumB);
 					
-					System.out.println("Digite o valor de c");
-					String UsernumcS = br.readLine();
-					double UserNumC = Double.parseDouble(UsernumcS);
-					calculadora2.setC(UserNumC);
+				System.out.println("Digite o valor de c");
+				String UsernumcS = br.readLine();
+				double UserNumC = Double.parseDouble(UsernumcS);
+				calculadora2.setC(UserNumC);
+				
+				double a = calculadora2.getA();
+				double b = calculadora2.getB();
+				double c = calculadora2.getC();
 					
-					double a = calculadora2.getA();
-					double b = calculadora2.getB();
-					double c = calculadora2.getC();
-					
-					System.out.printf("polinômio: %.0fx^2 + %.0fx + %.0f = 0%n",a,b,c);
-					calculadora2.Delta(a, b, c);
-					double delta = calculadora2.getDelta();
+				System.out.printf("polinômio: %.0fx^2 + %.0fx + %.0f = 0%n",a,b,c);
+				calculadora2.Delta(a, b, c);
+				double delta = calculadora2.getDelta();
 					
 					
-					if(a == 0) {
-						System.out.println("A resposta é indefinida");
+				if(a == 0) {
+					System.out.println("A resposta é indefinida");
+				}
+					
+				else if(delta < 0) {
+					System.out.printf("Resultado do delta:%.2f%n",delta);
+					System.out.println("Delta negativo não há como encontar raizes reais");
+				}
+					
+				else {
+					System.out.printf("Resultado do delta:%.2f%n",delta);
+					calculadora2.Raiz1(delta, a, b);
+					calculadora2.Raiz2(delta, a, b);
+					
+					double raiz1 = calculadora2.getRaiz1();
+					double raiz2 = calculadora2.getRaiz2();
+				
+					System.out.printf("Resultado das duas raízes: %.2f e %.2f.%n",raiz1,raiz2);
 					}
-					
-					else if(delta < 0) {
-						System.out.printf("Resultado do delta:%.2f%n",delta);
-						System.out.println("Delta negativo não há como encontar raizes reais");
-					}
-					
-					else {
-						System.out.printf("Resultado do delta:%.2f%n",delta);
-						calculadora2.Raiz1(delta, a, b);
-						calculadora2.Raiz2(delta, a, b);
-					
-						double raiz1 = calculadora2.getRaiz1();
-						double raiz2 = calculadora2.getRaiz2();
-					
-						System.out.printf("Resultado das duas raízes: %.2f e %.2f.%n",raiz1,raiz2);
-					}
-				}// fim do loop da calculadora de polinômios
-			}
+				}// fim da calculadora de polinômios
+
 			else if(UserInput.equals("0")) {
 				System.out.println("Até logo!");
 				break;
