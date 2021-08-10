@@ -80,7 +80,7 @@ public class Calculadorajava{
 	void divisao(double num1,double num2) {
 		double resultado = num1 / num2;
 		if(num2 == 0) {
-			System.out.print("A resposta é indefinida");
+			System.out.println("A resposta é indefinida");
 		}
 		else {
 			setResultado(resultado);
@@ -150,13 +150,20 @@ public class Calculadorajava{
 					double resultado = calculadora1.getResultado();
 					System.out.printf("A multiplicação entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
 				}
-					
+				
 				else if(UserOperation.equals("/")) {
 					calculadora1.divisao(num1,num2);
 					double resultado = calculadora1.getResultado();
-					System.out.printf("A divisão entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
-				}
+					double teste = calculadora1.getnum2();
+					if(teste == 0) {
+						continue;
+					}
+					else {
+						System.out.printf("A divisão entre %.2f e %.2f é: %.2f%n",num1,num2,resultado);
+					}
 					
+				}
+				
 				else if(UserOperation.equals("**")) {
 					calculadora1.exponenciacao(num1,num2);
 					double resultado = calculadora1.getResultado();
